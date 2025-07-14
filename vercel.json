@@ -1,1 +1,9 @@
-
+{
+  "routes": [
+    {
+      "src": "/api/alert".
+      "dest": "/index.js"
+    }
+  ]
+}
+    
