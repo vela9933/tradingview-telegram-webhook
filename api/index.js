@@ -1,6 +1,5 @@
-const fetch = require('node-fetch');
-
-module.exports = async (req, res) => {
+// api/index.js
+export default async function handler(req, res) {
   const TELEGRAM_TOKEN = '7267473734:AAFsLXcefbUWshzZUqBWgJ2LHxLw-Vfnehw';
   const CHAT_ID = '7621674494';
 
@@ -20,7 +19,7 @@ module.exports = async (req, res) => {
         chat_id: CHAT_ID,
         text: message,
         parse_mode: 'Markdown'
-      })
+      }),
     });
 
     const result = await response.json();
@@ -28,4 +27,3 @@ module.exports = async (req, res) => {
   } catch (err) {
     res.status(500).json({ ok: false, error: err.message });
   }
-};
